@@ -1,0 +1,54 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "ddee1ddb7b2165471ced2cf97d72531d",
+    "packages": [
+        {
+            "name": "warp-driven/php-sdk",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/warpdriven/wd-ai-php-sdk.git",
+                "reference": "b74929ff1d14fcffef13ba50dec45f8783ebf15f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/warpdriven/wd-ai-php-sdk/zipball/b74929ff1d14fcffef13ba50dec45f8783ebf15f",
+                "reference": "b74929ff1d14fcffef13ba50dec45f8783ebf15f",
+                "shasum": ""
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "WarpDriven\\PhpSdk\\": "src/"
+                }
+            },
+            "authors": [
+                {
+                    "name": "Warp Driven Technology",
+                    "email": "info@warpdriven.com.au"
+                }
+            ],
+            "support": {
+                "source": "https://github.com/warpdriven/wd-ai-php-sdk/tree/main",
+                "issues": "https://github.com/warpdriven/wd-ai-php-sdk/issues"
+            },
+            "time": "2022-12-25T02:57:31+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "warp-driven/php-sdk": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": [],
+    "plugin-api-version": "2.3.0"
+}

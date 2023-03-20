@@ -1,0 +1,42 @@
+{
+    "packages": [
+        {
+            "name": "warp-driven/php-sdk",
+            "version": "dev-main",
+            "version_normalized": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/warpdriven/wd-ai-php-sdk.git",
+                "reference": "b74929ff1d14fcffef13ba50dec45f8783ebf15f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/warpdriven/wd-ai-php-sdk/zipball/b74929ff1d14fcffef13ba50dec45f8783ebf15f",
+                "reference": "b74929ff1d14fcffef13ba50dec45f8783ebf15f",
+                "shasum": ""
+            },
+            "time": "2022-12-25T02:57:31+00:00",
+            "default-branch": true,
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "WarpDriven\\PhpSdk\\": "src/"
+                }
+            },
+            "authors": [
+                {
+                    "name": "Warp Driven Technology",
+                    "email": "info@warpdriven.com.au"
+                }
+            ],
+            "support": {
+                "source": "https://github.com/warpdriven/wd-ai-php-sdk/tree/main",
+                "issues": "https://github.com/warpdriven/wd-ai-php-sdk/issues"
+            },
+            "install-path": "../warp-driven/php-sdk"
+        }
+    ],
+    "dev": true,
+    "dev-package-names": []
+}
