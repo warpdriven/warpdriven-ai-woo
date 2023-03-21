@@ -80,7 +80,8 @@ class WGCAjax
                 "product_id"=> $product->get_ID(),
                 "product_sku"=> $product->sku,
                 "product_title"=> $product->name,
-                "product_image_html"=>$product->get_image()
+                "product_image_html"=>$product->get_image(),
+                "product_description"=>$product->get_short_description()
             ));
         }
 
@@ -113,7 +114,6 @@ class WGCAjax
      * Get the product categorys from woocommerce
      */
     public function product_description(){
-
         $request_body = file_get_contents('php://input');
         $data = json_decode($request_body);
         error_log(print_r($data, true));
@@ -124,7 +124,6 @@ class WGCAjax
      * Get the product categorys from woocommerce
      */
     public function article(){
-
         $request_body = file_get_contents('php://input');
         $data = json_decode($request_body);
         error_log(print_r($data, true));
@@ -135,7 +134,6 @@ class WGCAjax
      * Get the product categorys from woocommerce
      */
     public function translate(){
-
         $request_body = file_get_contents('php://input');
         $data = json_decode($request_body);
         error_log(print_r($data, true));
