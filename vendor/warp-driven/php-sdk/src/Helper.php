@@ -26,12 +26,15 @@ class Helper
     {
         $search_url = 'https://ai-stg.warp-driven.com/latest/vs/internal_search';
         $search_url .= '?' . http_build_query(array(
-                    'shop_sku_id' => $product_id
+                    'shop_variant_id' => $product_id
                 )
             );
         $response = wp_remote_post($search_url,array("headers"=>array("X-API-Key"=>$api_key),"timeout"=>300));
         if (!is_wp_error($response)) {
             $result = json_decode($response['body']);
+            if(!is_array($result)){
+                return array(); 
+            };
             return $result;
         }else{
             return array();
@@ -48,7 +51,7 @@ class Helper
      */
     public static function handle_history($api_key, $page_no,$page_size)
     {
-        $search_url = 'https://data.warp-driven.com/latest/product/handle_history';
+        $search_url = 'https://data-stg.warp-driven.com/latest/product/handle_history';
         $search_url .= '?' . http_build_query(array(
                     'page_no' => $page_no,
                     'page_size' => $page_size
@@ -67,7 +70,7 @@ class Helper
      */
     public static function init_products($api_key, $args)
     {
-        $search_url = 'https://data.warp-driven.com/latest/product/init';
+        $search_url = 'https://data-stg.warp-driven.com/latest/product/init';
         $response = wp_remote_post($search_url,array("headers"=>array("X-API-Key"=>$api_key,"Content-Type"=>"application/json"),"body"=>$args,"timeout"=>300));
         return self::response($response);
     }
@@ -79,44 +82,22 @@ class Helper
      */
     public static function get_vs_credit_status($api_key)
     {
-        $search_url = 'https://data.warp-driven.com/latest/product/get_vs_credit_status';
+        $search_url = 'https://data-stg.warp-driven.com/latest/product/get_vs_credit_status?plan_id=1';
         $response = wp_remote_get($search_url,array("headers"=>array("X-API-Key"=>$api_key),"timeout"=>300));
         return self::response($response);
     }
 
     /**
-     * product_description
+     * gpt
      * $api_key         Visual Search Search engine authorization key
      */
-    public static function product_description($api_key,$args)
+    public static function gpt($api_key,$args)
     {
-        $search_url = 'https://nlp-stg.warp-driven.com/latest/writer/product_description';
+        $search_url = 'https://nlp-stg.warp-driven.com/latest/writer/gpt';
         $response = wp_remote_post($search_url,array("headers"=>array("X-API-Key"=>$api_key,"Content-Type"=>"application/json"),"body"=>$args,"timeout"=>300));
         return self::response($response);
     }
-
-    /**
-     * article
-     * $api_key         Visual Search Search engine authorization key
-     */
-    public static function article($api_key,$args)
-    {
-        $search_url = 'https://nlp-stg.warp-driven.com/latest/writer/article';
-        $response = wp_remote_post($search_url,array("headers"=>array("X-API-Key"=>$api_key,"Content-Type"=>"application/json"),"body"=>$args,"timeout"=>300));
-        return self::response($response);
-    }
-
-     /**
-     * translate
-     * $api_key         Visual Search Search engine authorization key
-     */
-    public static function translate($api_key,$args)
-    {
-        $search_url = 'https://nlp-stg.warp-driven.com/latest/writer/translate';
-        $response = wp_remote_post($search_url,array("headers"=>array("X-API-Key"=>$api_key,"Content-Type"=>"application/json"),"body"=>$args,"timeout"=>300));
-        return self::response($response);
-    }
-
+    
     /**
      * Standard return results
      */

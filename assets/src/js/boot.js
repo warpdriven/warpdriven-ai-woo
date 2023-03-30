@@ -16,18 +16,8 @@ config({
         method:"POST",
         contentType: "application/x-www-form-urlencoded"
     },
-    WRITER_PRODUCT_DESCRIPTION:{
-        ajax_url:"/wp-admin/admin-ajax.php?action=wgc_product_description",
-        method:"POST",
-        contentType: "application/json"
-    },
-    WRITER_ARTICLE:{
-        ajax_url:"/wp-admin/admin-ajax.php?action=wgc_article",
-        method:"POST",
-        contentType: "application/json"
-    },
-    WRITER_TRANSLATE:{
-        ajax_url:"/wp-admin/admin-ajax.php?action=wgc_translate",
+    WRITER_GPT:{
+        ajax_url:"/wp-admin/admin-ajax.php?action=wgc_gpt",
         method:"POST",
         contentType: "application/json"
     }

@@ -20,7 +20,7 @@ class  WGCSettingPage
     {
 
         register_setting(
-            'general',
+            'wgc',
             'wgc_api_key'
         );
 
@@ -32,7 +32,7 @@ class  WGCSettingPage
     {
         foreach ($fields as $field) {
             register_setting(
-                'general',
+                'wgc',
                 $field['name']
             );
         }
@@ -80,8 +80,8 @@ class  WGCSettingPage
             <gpt-setting-page :action="'options.php'" :data="{'wgc_api_key':'<?php echo esc_attr($data['wgc_api_key']); ?>'}">
                 <template #footer>
                     <?php
-                        settings_fields('general');
-                        do_settings_sections('warp-driven-setting');
+                        settings_fields('wgc');
+                        do_settings_sections('warp-driven-wgc-setting');
                         submit_button(__('Save Settings', 'wd-wgc-woo'));
                     ?>
                 </template>

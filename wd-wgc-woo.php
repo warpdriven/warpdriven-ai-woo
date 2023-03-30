@@ -29,7 +29,7 @@ register_activation_hook(__FILE__, 'wd_wgc_woo_activation');
 if (!function_exists('wd_wgc_woo_deactivation')) {
     function wd_wgc_woo_deactivation()
     {
-        delete_option('wd_api_key');
+        delete_option('wgc_api_key');
     }
 }
 

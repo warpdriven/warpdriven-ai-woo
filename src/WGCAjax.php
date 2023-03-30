@@ -25,9 +25,7 @@ class WGCAjax
         $ajax_events = array(
             'get_woo_product_categories',
             'query_product_page',
-            'product_description',
-            'article',
-            'translate'
+            'gpt'
         );
         foreach ($ajax_events as $ajax_event) {
             add_action('wp_ajax_wgc_' . $ajax_event, array($this, $ajax_event));
@@ -76,11 +74,24 @@ class WGCAjax
         $data = array();
 
         foreach($result->products as $product){
+
+            $tags = $product->get_tag_ids();
+
+            $terms = array();
+
+            if ( $tags ) {
+                foreach ( $tags as $tag ) {
+                    array_push($terms,get_term_by( 'id', $tag, 'product_tag' )->name);
+                }
+            }
+
             array_push($data,array(
                 "product_id"=> $product->get_ID(),
                 "product_sku"=> $product->sku,
                 "product_title"=> $product->name,
                 "product_image_html"=>$product->get_image(),
+                'main_image_url' => wp_get_attachment_image_url($product->get_image_id(), 'full'),
+                "keywords" =>  $terms,
                 "product_description"=>$product->get_short_description()
             ));
         }
@@ -113,31 +124,11 @@ class WGCAjax
     /**
      * Get the product categorys from woocommerce
      */
-    public function product_description(){
+    public function gpt(){
         $request_body = file_get_contents('php://input');
         $data = json_decode($request_body);
         error_log(print_r($data, true));
-        wp_send_json(Helper::product_description(WGCCore::getApiKey(), json_encode($data)));
-    }
-
-    /**
-     * Get the product categorys from woocommerce
-     */
-    public function article(){
-        $request_body = file_get_contents('php://input');
-        $data = json_decode($request_body);
-        error_log(print_r($data, true));
-        wp_send_json(Helper::article(WGCCore::getApiKey(), json_encode($data)));
-    }
-
-    /**
-     * Get the product categorys from woocommerce
-     */
-    public function translate(){
-        $request_body = file_get_contents('php://input');
-        $data = json_decode($request_body);
-        error_log(print_r($data, true));
-        wp_send_json(Helper::translate(WGCCore::getApiKey(), json_encode($data)));
+        wp_send_json(Helper::gpt(WGCCore::getApiKey(), json_encode($data)));
     }
 
 
