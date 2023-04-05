@@ -16,8 +16,27 @@ config({
         method:"POST",
         contentType: "application/x-www-form-urlencoded"
     },
+    GET_USER_EXSITED:{
+        ajax_url:"/wp-admin/admin-ajax.php?action=wgc_get_user_exsited",
+        method:"GET"
+    },
+    CREATE_USER:{
+        ajax_url:"/wp-admin/admin-ajax.php?action=wgc_create_erp_user",
+        method:"POST",
+        contentType: "application/json"
+    },
     WRITER_GPT:{
         ajax_url:"/wp-admin/admin-ajax.php?action=wgc_gpt",
+        method:"POST",
+        contentType: "application/json"
+    },
+    SAVE_PRODUCT:{
+        ajax_url:"/wp-admin/admin-ajax.php?action=wgc_save_product",
+        method:"POST",
+        contentType: "application/json"
+    },
+    SAVE_POST:{
+        ajax_url:"/wp-admin/admin-ajax.php?action=wgc_save_post",
         method:"POST",
         contentType: "application/json"
     }

@@ -7,6 +7,8 @@ namespace WarpDriven\WgcCore;
 
 use WarpDriven\PhpSdk\Helper;
 
+use WC_Product;
+
 class WGCAjax
 {
 
@@ -25,7 +27,13 @@ class WGCAjax
         $ajax_events = array(
             'get_woo_product_categories',
             'query_product_page',
-            'gpt'
+            'gpt',
+            'save_product',
+            'save_post',
+            'get_user_exsited',
+            'create_erp_user',
+            'create_my_website',
+            'my_website'
         );
         foreach ($ajax_events as $ajax_event) {
             add_action('wp_ajax_wgc_' . $ajax_event, array($this, $ajax_event));
@@ -117,18 +125,189 @@ class WGCAjax
             'pad_counts' => true
         );
         $product_categories = array_values(get_terms($args));
-        error_log(print_r($product_categories, true));
+        // error_log(print_r($product_categories, true));
         wp_send_json($product_categories);
     }
 
     /**
-     * Get the product categorys from woocommerce
+     * 添加新商品
      */
+    public function save_product(){
+        // 获取 POST 请求中提交的商品信息
+        $request_body = file_get_contents('php://input');
+        $product_data = json_decode($request_body);
+        
+        // 创建新的商品对象
+        if($product_data->product_id){
+            $new_product = wc_get_product($product_data->product_id);
+        }else{
+            $new_product = new WC_Product();
+        }
+       
+
+        // 设置商品信息
+        $new_product->set_name($product_data->product_name);
+        $new_product->set_description($product_data->product_description);
+       
+        // 保存商品对象
+        $new_product->save();
+
+        if($new_product->get_id()){
+            wp_set_object_terms($new_product->get_id(), $product_data->product_keywords, 'product_tag');
+        }
+        
+        // 保存商品对象
+        wp_send_json(array(
+            'success' => true,
+            'message' => 'New product added successfully.',
+            'product_id' => $new_product->get_id(),
+        ));
+    }
+
+    /**
+     * 添加新商品
+     */
+    public function save_post(){
+        // 获取 POST 请求中提交的商品信息
+        $request_body = file_get_contents('php://input');
+        $post_data = json_decode($request_body);
+        $user_id = get_current_user_id();
+
+        $post_title = $post_data->title;
+        $post_content = $post_data->content;
+        $post_tags = $post_data->keywords;
+        
+        $post_id = wp_insert_post(array(
+            'post_title' => $post_title,
+            'post_content' => $post_content,
+            'post_author' => $user_id,
+            'post_type' => 'post',
+            'post_status' => 'publish'
+        ));
+
+        if($post_id){
+            wp_set_object_terms($post_id, $post_tags, 'post_tag');
+        }
+        
+        // 保存商品对象
+        wp_send_json(array(
+            'success' => true,
+            'message' => 'New post added successfully.',
+            'post_id' => $post_id,
+        ));
+    }
+
+    
     public function gpt(){
         $request_body = file_get_contents('php://input');
         $data = json_decode($request_body);
-        error_log(print_r($data, true));
         wp_send_json(Helper::gpt(WGCCore::getApiKey(), json_encode($data)));
+    }
+
+
+    public function get_user_exsited(){
+        $result = Helper::get_user_exsited(get_option('admin_email'));
+
+        if($result->data){
+            $this->create_website();
+        }
+        
+        wp_send_json($result);
+    }
+
+    public function create_erp_user(){
+        $request_body = file_get_contents('php://input');
+        
+        $data = json_decode($request_body);
+        $data-> email = get_option('admin_email');  
+
+        $shop_url = home_url();
+
+        $host = parse_url($shop_url, PHP_URL_HOST);
+        $shop_code = explode(".", $host)[0];
+        $shop_url = str_replace('http://', '', $shop_url);
+        $shop_url = str_replace('https://', '', $shop_url);
+        $data -> platform_type = 1; // 这个属性不是从 WooCommerce 配置中获取的
+
+        $result = Helper::get_user_exsited($data-> email);
+
+        if($result->status){
+
+            if($result->data){
+
+            }else{
+
+                // 创建用户
+                $data -> name = get_option( 'woocommerce_store_name' ); // 获取商店名称
+                $data -> phone = get_option( 'woocommerce_store_phone' ); // 获取商店电话
+                $data -> language = get_option( 'WPLANG' ); // 获取语言设置
+               
+                $data -> shop_code = $shop_code; // 获取商店地址，通常用作商店代码
+                $data -> shop_name = get_option( 'woocommerce_store_name' ); // 获取商店名称
+                $data -> website = $shop_url; // 获取网站URL
+                $data -> address1 = get_option( 'woocommerce_store_address' ); // 获取商店地址
+                $data -> address2 = ''; // 这个属性不是从 WooCommerce 配置中获取的
+                $data -> city = get_option( 'woocommerce_store_city' ); // 获取商店城市
+                $data -> state = get_option( 'woocommerce_default_country' ); // 获取商店默认国家/地区
+                $data -> zip = get_option( 'woocommerce_store_postcode' ); // 获取商店邮政编码
+                $data -> country = get_option( 'woocommerce_default_country' ); // 获取商店默认国家/地区
+                $data -> currency = get_woocommerce_currency(); // 获取商店货币设置
+                $data -> timezone = get_option( 'timezone_string' ); // 获取时区设置
+                $data -> multi_location_enabled = true; // 这个属性不是从 WooCommerce 配置中获取的
+                $data -> cookie_consent_level = 'explicit'; // 获取Cookie同意级别
+                $data -> tags = array(); // 这个属性不是从 WooCommerce 配置中获取的
+    
+                $result = Helper::create_erp_user(json_encode($data));
+
+                if($result -> status){
+                    // 保存 erp user password
+                    update_option("wgc_erp_user_password",$data->password);
+                    $this->create_website();
+                }
+            }
+
+
+        }
+
+        wp_send_json($result);
+    }
+
+
+    private function create_website(){
+
+        $shop_url = home_url();
+
+        $host = parse_url($shop_url, PHP_URL_HOST);
+        $shop_code = explode(".", $host)[0];
+        $shop_url = str_replace('http://', '', $shop_url);
+        $shop_url = str_replace('https://', '', $shop_url);
+
+        $params = array(
+            "email" => get_option('admin_email'),
+            "password"=> get_option("wgc_erp_user_password"),
+            "password"=> "test",
+            "website_code"=>$shop_code,
+            "platform_type"=> 1,
+            "url"=> $shop_url
+        );
+
+        $result = Helper::my_website(json_encode($params));
+
+        $api_key =  $result-> data;
+        if(!$api_key){
+            $result = Helper::create_my_website(json_encode($params));
+            if($result -> status){
+                $api_key = $result->data->api_key;
+            }
+        }
+        update_option("wgc_api_key",$api_key);
+    }
+
+    public function create_my_website(){
+
+        $request_body = file_get_contents('php://input');
+        $data = json_decode($request_body);       
+        wp_send_json(array("status"=>true));
     }
 
 

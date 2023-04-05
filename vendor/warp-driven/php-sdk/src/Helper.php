@@ -7,8 +7,8 @@ class Helper
     /**
      * Query similar products according to product ID
      *
-     * $search_url      Visual Search Search engine address
-     * $api_key         Visual Search Search engine authorization key
+     * $search_url       address
+     * $api_key          authorization key
      * $website_code    Visual Search Website identity
      * $product_id      product ID
      *
@@ -44,7 +44,7 @@ class Helper
     /**
      * Image Processing History
      * 
-     * $api_key         Visual Search Search engine authorization key
+     * $api_key          authorization key
      * $page_no         page number
      * $page_size       page Size
      * 
@@ -65,7 +65,7 @@ class Helper
     /**
      * Initialize product image
      * 
-     * $api_key         Visual Search Search engine authorization key
+     * $api_key          authorization key
      * $args            init args
      */
     public static function init_products($api_key, $args)
@@ -78,7 +78,7 @@ class Helper
 
     /**
      * Get initialization status
-     * $api_key         Visual Search Search engine authorization key
+     * $api_key          authorization key
      */
     public static function get_vs_credit_status($api_key)
     {
@@ -89,7 +89,7 @@ class Helper
 
     /**
      * gpt
-     * $api_key         Visual Search Search engine authorization key
+     * $api_key        authorization key
      */
     public static function gpt($api_key,$args)
     {
@@ -97,6 +97,64 @@ class Helper
         $response = wp_remote_post($search_url,array("headers"=>array("X-API-Key"=>$api_key,"Content-Type"=>"application/json"),"body"=>$args,"timeout"=>300));
         return self::response($response);
     }
+
+    /**
+     * erp_user_create
+     * $args         Create Erp User
+     */
+    public static function erp_user_create($args)
+    {
+        $search_url = 'https://api-stg.warp-driven.com/erp_user/create';
+        $response = wp_remote_post($search_url,array("headers"=>array("Content-Type"=>"application/json"),"body"=>$args,"timeout"=>300));
+        return self::response($response);
+    }
+
+
+    /**
+     * get_user_exsited
+     * $email         email
+     */
+    public static function get_user_exsited($email)
+    {
+        $search_url = 'https://api-stg.warp-driven.com/erp_user?erp_user_email='.$email;
+        $response = wp_remote_get($search_url,array());
+        return self::response($response);
+    }
+
+    /**
+     * create_erp_user
+     * $arg           Erp User
+     */
+    public static function create_erp_user($args)
+    {
+        $search_url = 'https://api-stg.warp-driven.com/erp_user/create';
+        $response = wp_remote_post($search_url,array("headers"=>array("Content-Type"=>"application/json"),"body"=>$args,"timeout"=>300));
+        return self::response($response);
+    }
+
+    /**
+     * create_erp_user
+     * $arg           Erp User
+     */
+    public static function my_website($args)
+    {
+        $search_url = 'https://api-stg.warp-driven.com/my_website';
+        $response = wp_remote_post($search_url,array("headers"=>array("Content-Type"=>"application/json"),"body"=>$args,"timeout"=>300));
+        return self::response($response);
+    }
+
+     /**
+     * create_my_website
+     * $arg           Erp User
+     */
+    public static function create_my_website($args)
+    {
+        $search_url = 'https://api-stg.warp-driven.com/my_website/create';
+        $response = wp_remote_post($search_url,array("headers"=>array("Content-Type"=>"application/json"),"body"=>$args,"timeout"=>300));
+        return self::response($response);
+    }
+
+    
     
     /**
      * Standard return results
