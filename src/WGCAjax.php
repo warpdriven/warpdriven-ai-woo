@@ -206,12 +206,27 @@ class WGCAjax
 
 
     public function get_user_exsited(){
-        $result = Helper::get_user_exsited(get_option('admin_email'));
 
-        if($result->data){
-            $this->create_website();
-        }
         
+        // 如果api key 不存在
+        if(!get_option("wgc_api_key")){
+
+            $result = Helper::get_user_exsited(get_option('admin_email'));
+            
+            if($result->data){
+                // 如果用户密码已存在
+                if(get_option("wgc_erp_user_password")){
+                    $this->create_website();
+                }else{
+                    $result = array( "status"=>true, "msg" => "reset post!", "data" => false, "flag" => 1 );
+                }
+            }
+
+        } else {
+            // 如果api key 已存在，直接返回
+            $result = array( "status"=>true, "msg" => "get api key success!", "data" => true );
+        }
+
         wp_send_json($result);
     }
 
@@ -307,7 +322,8 @@ class WGCAjax
 
         $request_body = file_get_contents('php://input');
         $data = json_decode($request_body);       
-        wp_send_json(array("status"=>true));
+        update_option("wgc_erp_user_password",$data->password);
+        wp_send_json(array($this->create_my_website()));
     }
 
 
