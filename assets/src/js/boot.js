@@ -25,6 +25,11 @@ config({
         method:"POST",
         contentType: "application/json"
     },
+    CREATE_MY_WEBSITE: {
+        ajax_url: "/wp-admin/admin-ajax.php?action=wgc_create_my_website",
+        method: "POST",
+        contentType: "application/json"
+    },
     WRITER_GPT:{
         ajax_url:"/wp-admin/admin-ajax.php?action=wgc_gpt",
         method:"POST",

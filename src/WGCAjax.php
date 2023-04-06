@@ -324,7 +324,7 @@ class WGCAjax
         $request_body = file_get_contents('php://input');
         $data = json_decode($request_body);       
         update_option("wgc_erp_user_password",$data->password);
-        wp_send_json(array($this->create_website()));
+        wp_send_json($this->create_website());
     }
 
 
