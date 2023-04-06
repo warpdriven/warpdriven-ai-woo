@@ -316,6 +316,7 @@ class WGCAjax
             }
         }
         update_option("wgc_api_key",$api_key);
+        return $result;
     }
 
     public function create_my_website(){
@@ -323,7 +324,7 @@ class WGCAjax
         $request_body = file_get_contents('php://input');
         $data = json_decode($request_body);       
         update_option("wgc_erp_user_password",$data->password);
-        wp_send_json(array($this->create_my_website()));
+        wp_send_json(array($this->create_website()));
     }
 
 
