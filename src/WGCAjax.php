@@ -300,7 +300,6 @@ class WGCAjax
         $params = array(
             "email" => get_option('admin_email'),
             "password"=> get_option("wgc_erp_user_password"),
-            "password"=> "test",
             "website_code"=>$shop_code,
             "platform_type"=> 1,
             "url"=> $shop_url
