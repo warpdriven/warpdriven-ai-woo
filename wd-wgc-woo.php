@@ -44,9 +44,13 @@ add_action('init', function () {
 
 add_action('admin_enqueue_scripts', function () {
     $plugin_version = get_plugin_data(WD_WGC_WOO_CORE_CORE_FILE)['Version'];
-    wp_enqueue_style('wd_wgc_woo-style', plugins_url('/assets/css/backend.css', WD_WGC_WOO_CORE_CORE_FILE), array(), $plugin_version);
+    // wp_enqueue_script('wd_wgc_woo-script', plugins_url('/assets/js/backend.js', WD_WGC_WOO_CORE_CORE_FILE), array('jquery'), $plugin_version, true);
+    // wp_enqueue_style('wd_wgc_woo-style', plugins_url('/assets/css/backend.css', WD_WGC_WOO_CORE_CORE_FILE), array(), $plugin_version);
+    wp_enqueue_script('wd_wgc_woo-script', plugins_url('/assets/dist/main.js', WD_WGC_WOO_CORE_CORE_FILE), array('jquery'), $plugin_version, true);
+    wp_enqueue_style('wd_wgc_woo-style', plugins_url('/assets/dist/main.css', WD_WGC_WOO_CORE_CORE_FILE), array(), $plugin_version);
+    wp_enqueue_style('wd_wgc_woo-style-vue', plugins_url('/assets/dist/css/vue-styles.css', WD_WGC_WOO_CORE_CORE_FILE), array(), $plugin_version);
+    
     wp_style_add_data('wd_wgc_woo-style', 'rtl', 'replace');
-    wp_enqueue_script('wd_wgc_woo-script', plugins_url('/assets/js/backend.js', WD_WGC_WOO_CORE_CORE_FILE), array('jquery'), $plugin_version, true);
     wp_localize_script('wd_wgc_woo-script', 'wd_wgc_woo_', array(
         'ajax_url' => admin_url('admin-ajax.php')
     ));
@@ -54,9 +58,13 @@ add_action('admin_enqueue_scripts', function () {
 
 add_action('wp_enqueue_scripts', function () {
     $plugin_version = get_plugin_data(WD_WGC_WOO_CORE_CORE_FILE)['Version'];
-    wp_enqueue_style('wd_wgc_woo-frontend-style', plugins_url('/assets/css/frontend.css', WD_WGC_WOO_CORE_CORE_FILE), array(), $plugin_version);
+    // wp_enqueue_script('wd_wgc_woo-frontend-script', plugins_url('/assets/js/frontend.js', WD_WGC_WOO_CORE_CORE_FILE), array('jquery'), $plugin_version, true);
+    // wp_enqueue_style('wd_wgc_woo-frontend-style', plugins_url('/assets/css/frontend.css', WD_WGC_WOO_CORE_CORE_FILE), array(), $plugin_version);
+    wp_enqueue_script('wd_wgc_woo-script', plugins_url('/assets/dist/main.js', WD_WGC_WOO_CORE_CORE_FILE), array('jquery'), $plugin_version, true);
+    wp_enqueue_style('wd_wgc_woo-style', plugins_url('/assets/dist/main.css', WD_WGC_WOO_CORE_CORE_FILE), array(), $plugin_version);
+    wp_enqueue_style('wd_wgc_woo-style-vue', plugins_url('/assets/dist/css/vue-styles.css', WD_WGC_WOO_CORE_CORE_FILE), array(), $plugin_version);
+    
     wp_style_add_data('wd_wgc_woo-frontend-style', 'rtl', 'replace');
-    wp_enqueue_script('wd_wgc_woo-frontend-script', plugins_url('/assets/js/frontend.js', WD_WGC_WOO_CORE_CORE_FILE), array('jquery'), $plugin_version, true);
     wp_localize_script('wd_wgc_woo-frontend-script', 'wd_wgc_woo_', array(
         'ajax_url' => admin_url('admin-ajax.php')
     ));
