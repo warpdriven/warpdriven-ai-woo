@@ -71,7 +71,7 @@ class WGCAjax
                 'paginate'=>true,
                 'limit' => $limit?$limit:80,
                 'page' => $page?$page:1,
-                'name' => $name?$name:'',
+                'name__like' => $name?$name:'',
                 'sku' => $sku?$sku:'',
                 'tax_query' => $tax_query,
                 'orderby' => 'date',
@@ -100,7 +100,8 @@ class WGCAjax
                 "product_image_html"=>$product->get_image(),
                 'main_image_url' => wp_get_attachment_image_url($product->get_image_id(), 'full'),
                 "keywords" =>  $terms,
-                "product_description"=>$product->get_short_description()
+                "product_description"=>$product->get_description(),
+                "product_short_description"=>$product->get_short_description()
             ));
         }
 
@@ -125,7 +126,6 @@ class WGCAjax
             'pad_counts' => true
         );
         $product_categories = array_values(get_terms($args));
-        // error_log(print_r($product_categories, true));
         wp_send_json($product_categories);
     }
 
@@ -148,6 +148,7 @@ class WGCAjax
         // 设置商品信息
         $new_product->set_name($product_data->product_name);
         $new_product->set_description($product_data->product_description);
+        $new_product->set_short_description($product_data->product_short_description);
        
         // 保存商品对象
         $new_product->save();
@@ -158,8 +159,8 @@ class WGCAjax
         
         // 保存商品对象
         wp_send_json(array(
-            'success' => true,
-            'message' => 'New product added successfully.',
+            'status' => true,
+            'msg' => $new_product->get_id()?'Product edit successfully.':'New product added successfully.',
             'product_id' => $new_product->get_id(),
         ));
     }
@@ -191,8 +192,8 @@ class WGCAjax
         
         // 保存商品对象
         wp_send_json(array(
-            'success' => true,
-            'message' => 'New post added successfully.',
+            'status' => true,
+            'msg' => $post_id?'Product post successfully':'New post added successfully.',
             'post_id' => $post_id,
         ));
     }
@@ -201,33 +202,28 @@ class WGCAjax
     public function gpt(){
         $request_body = file_get_contents('php://input');
         $data = json_decode($request_body);
-        wp_send_json(Helper::gpt(WGCCore::getApiKey(), json_encode($data)));
+        $result = Helper::gpt(WGCCore::getApiKey(), json_encode($data));
+        wp_send_json($result,$result->code);
     }
 
 
     public function get_user_exsited(){
 
-        
-        // 如果api key 不存在
-        if(!get_option("wgc_api_key")){
+        $result = Helper::get_user_exsited(get_option('admin_email'));
+		
+		if($result->data){
+			// 如果用户密码已存在
+			if(get_option("wgc_erp_user_password")){
+				 $ru = $this->create_website();
+				 if(!$ru -> data){
+					 $result = array( "status"=>true, "msg" => "reset post!", "data" => false, "flag" => 1 );
+				 }
+			}else{
+				$result = array( "status"=>true, "msg" => "reset post!", "data" => false, "flag" => 1 );
+			}
+		}
 
-            $result = Helper::get_user_exsited(get_option('admin_email'));
-            
-            if($result->data){
-                // 如果用户密码已存在
-                if(get_option("wgc_erp_user_password")){
-                    $this->create_website();
-                }else{
-                    $result = array( "status"=>true, "msg" => "reset post!", "data" => false, "flag" => 1 );
-                }
-            }
-
-        } else {
-            // 如果api key 已存在，直接返回
-            $result = array( "status"=>true, "msg" => "get api key success!", "data" => true );
-        }
-
-        wp_send_json($result);
+        wp_send_json($result,$result->code);
     }
 
     public function create_erp_user(){
@@ -284,7 +280,7 @@ class WGCAjax
 
         }
 
-        wp_send_json($result);
+        wp_send_json($result,$result->code);
     }
 
 
@@ -323,7 +319,8 @@ class WGCAjax
         $request_body = file_get_contents('php://input');
         $data = json_decode($request_body);       
         update_option("wgc_erp_user_password",$data->password);
-        wp_send_json($this->create_website());
+        $result  = $this->create_website();
+        wp_send_json($result,$result->code);
     }
 
 
