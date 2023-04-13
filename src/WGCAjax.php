@@ -28,6 +28,7 @@ class WGCAjax
             'get_woo_product_categories',
             'query_product_page',
             'gpt',
+            'assistant',
             'save_product',
             'save_post',
             'get_user_exsited',
@@ -206,6 +207,12 @@ class WGCAjax
         wp_send_json($result,$result->code);
     }
 
+    public function assistant(){
+        $request_body = file_get_contents('php://input');
+        $data = json_decode($request_body);
+        $result = Helper::assistant(WGCCore::getApiKey(), json_encode($data));
+        wp_send_json($result,$result->code);
+    }
 
     public function get_user_exsited(){
 

@@ -2,21 +2,20 @@
     "packages": [
         {
             "name": "warp-driven/php-sdk",
-            "version": "dev-main",
-            "version_normalized": "dev-main",
+            "version": "dev-dev",
+            "version_normalized": "dev-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/warpdriven/wd-ai-php-sdk.git",
-                "reference": "14ed8f619a2bc311c60ab36a1013b1cae0fd2421"
+                "reference": "8575fbc3382b198353a642b7b718c6e21fefa244"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/warpdriven/wd-ai-php-sdk/zipball/14ed8f619a2bc311c60ab36a1013b1cae0fd2421",
-                "reference": "14ed8f619a2bc311c60ab36a1013b1cae0fd2421",
+                "url": "https://api.github.com/repos/warpdriven/wd-ai-php-sdk/zipball/8575fbc3382b198353a642b7b718c6e21fefa244",
+                "reference": "8575fbc3382b198353a642b7b718c6e21fefa244",
                 "shasum": ""
             },
-            "time": "2023-03-26T12:48:25+00:00",
-            "default-branch": true,
+            "time": "2023-04-13T09:30:44+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -26,12 +25,12 @@
             },
             "authors": [
                 {
-                    "name": "Warp Driven Technology",
-                    "email": "info@warpdriven.com.au"
+                    "name": "jabber",
+                    "email": "jabber5880@gmail.com"
                 }
             ],
             "support": {
-                "source": "https://github.com/warpdriven/wd-ai-php-sdk/tree/main",
+                "source": "https://github.com/warpdriven/wd-ai-php-sdk/tree/dev",
                 "issues": "https://github.com/warpdriven/wd-ai-php-sdk/issues"
             },
             "install-path": "../warp-driven/php-sdk"

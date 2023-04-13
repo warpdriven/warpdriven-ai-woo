@@ -98,6 +98,14 @@ class Helper
         return self::response($response);
     }
 
+
+    public static function assistant($api_key,$args)
+    {
+        $search_url = 'https://nlp-stg.warp-driven.com/latest/writer/assistant';
+        $response = wp_remote_post($search_url,array("headers"=>array("X-API-Key"=>$api_key,"Content-Type"=>"application/json"),"body"=>$args,"timeout"=>300));
+        return self::response($response);
+    }
+
     /**
      * erp_user_create
      * $args         Create Erp User
@@ -117,7 +125,7 @@ class Helper
     public static function get_user_exsited($email)
     {
         $search_url = 'https://api-stg.warp-driven.com/erp_user?erp_user_email='.$email;
-        $response = wp_remote_get($search_url,array());
+        $response = wp_remote_get($search_url,array("timeout"=>300));
         return self::response($response);
     }
 
