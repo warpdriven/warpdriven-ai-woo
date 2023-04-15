@@ -77,15 +77,16 @@ class  WGCSettingPage
             }
           
             ?>
-            <gpt-setting-page :action="'options.php'" :data="{'wgc_api_key':'<?php echo esc_attr($data['wgc_api_key']); ?>'}">
+            <!-- <gpt-setting-page  :action="'options.php'" :data="{'wgc_api_key':'<?php echo esc_attr($data['wgc_api_key']); ?>'}">
                 <template #footer>
                     <?php
-                        settings_fields('wgc');
-                        do_settings_sections('warp-driven-wgc-setting');
-                        submit_button(__('Save Settings', 'wd-wgc-woo'));
+                        // settings_fields('wgc');
+                        // do_settings_sections('warp-driven-wgc-setting');
+                        // submit_button(__('Save Settings', 'wd-wgc-woo'));
                     ?>
                 </template>
-            </gpt-setting-page>
+            </gpt-setting-page> -->
+            <gpt-setting-page :erp-user-email="'<?php echo get_option('admin_email'); ?>'" />
         </div>
         <?php
     }

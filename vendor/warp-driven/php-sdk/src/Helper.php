@@ -93,7 +93,8 @@ class Helper
      */
     public static function gpt($api_key,$args)
     {
-        $search_url = 'https://nlp-stg.warp-driven.com/latest/writer/gpt';
+        // $search_url = 'https://nlp-stg.warp-driven.com/latest/writer/gpt';
+        $search_url = 'https://nlp.warp-driven.com/latest/writer/gpt';
         $response = wp_remote_post($search_url,array("headers"=>array("X-API-Key"=>$api_key,"Content-Type"=>"application/json"),"body"=>$args,"timeout"=>1200));
         return self::response($response);
     }
@@ -101,7 +102,8 @@ class Helper
 
     public static function assistant($api_key,$args)
     {
-        $search_url = 'https://nlp-stg.warp-driven.com/latest/writer/assistant';
+        // $search_url = 'https://nlp-stg.warp-driven.com/latest/writer/assistant';
+        $search_url = 'https://nlp.warp-driven.com/latest/writer/assistant';
         $response = wp_remote_post($search_url,array("headers"=>array("X-API-Key"=>$api_key,"Content-Type"=>"application/json"),"body"=>$args,"timeout"=>1200));
         return self::response($response);
     }
