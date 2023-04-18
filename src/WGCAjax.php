@@ -29,6 +29,9 @@ class WGCAjax
             'query_product_page',
             'gpt',
             'assistant',
+            "get_task_status",
+            "get_task",
+            "get_tasks",
             'save_product',
             'save_post',
             'get_user_exsited',
@@ -211,6 +214,28 @@ class WGCAjax
         $request_body = file_get_contents('php://input');
         $data = json_decode($request_body);
         $result = Helper::assistant(WGCCore::getApiKey(), json_encode($data));
+        wp_send_json($result,$result->code);
+    }
+
+    /**
+     * 2023 04 18
+     */
+    public function get_task_status(){
+        $request_body = file_get_contents('php://input');
+        $data = json_decode($request_body);
+        $result = Helper::get_task_status(WGCCore::getApiKey(), json_encode($data));
+        wp_send_json($result,$result->code);
+    }
+    public function get_task(){
+        $request_body = file_get_contents('php://input');
+        $data = json_decode($request_body);
+        $result = Helper::get_task(WGCCore::getApiKey(), json_encode($data));
+        wp_send_json($result,$result->code);
+    }
+    public function get_tasks(){
+        $request_body = file_get_contents('php://input');
+        $data = json_decode($request_body);
+        $result = Helper::get_tasks(WGCCore::getApiKey(), json_encode($data));
         wp_send_json($result,$result->code);
     }
 
