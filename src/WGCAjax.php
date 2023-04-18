@@ -233,7 +233,7 @@ class WGCAjax
         // $data = json_decode($request_body);
         // $result = Helper::get_task(WGCCore::getApiKey(), json_encode($data));
         $data = $_GET["task_id"];
-        $result = Helper::get_task_status(WGCCore::getApiKey(), $data);
+        $result = Helper::get_task(WGCCore::getApiKey(), $data);
         wp_send_json($result,$result->code);
     }
     public function get_tasks(){
