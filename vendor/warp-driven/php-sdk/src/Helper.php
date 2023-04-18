@@ -117,14 +117,14 @@ class Helper
      */
     public static function get_task_status($api_key,$args)
     {
-        $search_url = 'https://nlp-stg.warp-driven.com/latest/writer/task_status?task_id='.$args["task_id"];
+        $search_url = 'https://nlp-stg.warp-driven.com/latest/writer/task_status?task_id='.$args;
         // $search_url = 'https://nlp.warp-driven.com/latest/writer/assistant';
         $response = wp_remote_get($search_url,array("headers"=>array("X-API-Key"=>$api_key,"Content-Type"=>"application/json"),"timeout"=>1200));
         return self::response($response);
     }
     public static function get_task($api_key,$args)
     {
-        $search_url = 'https://nlp-stg.warp-driven.com/latest/writer/task?task_id='.$args["task_id"];
+        $search_url = 'https://nlp-stg.warp-driven.com/latest/writer/task?task_id='.$args;
         // $search_url = 'https://nlp.warp-driven.com/latest/writer/assistant';
         $response = wp_remote_get($search_url,array("headers"=>array("X-API-Key"=>$api_key,"Content-Type"=>"application/json"),"timeout"=>1200));
         return self::response($response);
