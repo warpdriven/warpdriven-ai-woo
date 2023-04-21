@@ -214,7 +214,9 @@ class Helper
         error_log(print_r($response, true));
         if (!is_wp_error($response)) {
             $result = json_decode($response['body']);
-            $result->code = $response['response']?$response['response']['code']:200;
+            if($result){
+                $result->code = $response['response']?$response['response']['code']:200;
+            }
             if($result->detail){
                 $result->status = false;
                 $result->msg = $result->detail;
