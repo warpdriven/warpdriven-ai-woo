@@ -124,8 +124,8 @@ class Helper
     }
     public static function get_active_task_info($api_key)
     {
-        $search_url = 'https://nlp-stg.warp-driven.com/latest/writer/get_active_task_info';
-        // $search_url = 'https://nlp.warp-driven.com/latest/writer/get_active_task_info';
+        $search_url = 'https://nlp-stg.warp-driven.com/latest/writer/active_task_info';
+        // $search_url = 'https://nlp.warp-driven.com/latest/writer/active_task_info';
         $response = wp_remote_get($search_url,array("headers"=>array("X-API-Key"=>$api_key,"Content-Type"=>"application/json"),"timeout"=>1200));
         return self::response($response);
     }

@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/warpdriven/wd-ai-php-sdk.git",
-                "reference": "cbfb1a433a5dd37a3eecdfd527d164b2d406c667"
+                "reference": "64149d13163b90f18ae31d2be534789249077dc0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/warpdriven/wd-ai-php-sdk/zipball/cbfb1a433a5dd37a3eecdfd527d164b2d406c667",
-                "reference": "cbfb1a433a5dd37a3eecdfd527d164b2d406c667",
+                "url": "https://api.github.com/repos/warpdriven/wd-ai-php-sdk/zipball/64149d13163b90f18ae31d2be534789249077dc0",
+                "reference": "64149d13163b90f18ae31d2be534789249077dc0",
                 "shasum": ""
             },
             "type": "library",
@@ -36,7 +36,7 @@
                 "source": "https://github.com/warpdriven/wd-ai-php-sdk/tree/dev",
                 "issues": "https://github.com/warpdriven/wd-ai-php-sdk/issues"
             },
-            "time": "2023-04-21T03:07:33+00:00"
+            "time": "2023-04-21T06:12:43+00:00"
         }
     ],
     "packages-dev": [],
