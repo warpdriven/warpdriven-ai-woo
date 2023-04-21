@@ -56,8 +56,26 @@ class WGCAjax
     public function get_product()
     {
         $id = $_GET["id"];
-        $result = wc_get_product(intval($id));
-        wp_send_json($result);
+        $product = wc_get_product(intval($id));
+        $tags = $product->get_tag_ids();
+        $terms = array();
+
+            if ($tags) {
+                foreach ($tags as $tag) {
+                    array_push($terms, get_term_by('id', $tag, 'product_tag')->name);
+                }
+            }
+
+        wp_send_json(array(
+        "product_id" => $product->get_ID(),
+        "product_sku" => $product->sku,
+        "product_title" => $product->name,
+        "product_image_html" => $product->get_image(),
+        'main_image_url' => wp_get_attachment_image_url($product->get_image_id(), 'full'),
+        "keywords" =>  $terms,
+        "product_description" => $product->get_description(),
+        "product_short_description" => $product->get_short_description()
+        ));
     }
 
 
