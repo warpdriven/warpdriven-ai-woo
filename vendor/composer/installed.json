@@ -7,15 +7,15 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/warpdriven/wd-ai-php-sdk.git",
-                "reference": "e6d64843aec969514d1718d188a1817709c33dd7"
+                "reference": "82fbbb5952101ac9f6bfe2791ced0b5cb673ad20"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/warpdriven/wd-ai-php-sdk/zipball/e6d64843aec969514d1718d188a1817709c33dd7",
-                "reference": "e6d64843aec969514d1718d188a1817709c33dd7",
+                "url": "https://api.github.com/repos/warpdriven/wd-ai-php-sdk/zipball/82fbbb5952101ac9f6bfe2791ced0b5cb673ad20",
+                "reference": "82fbbb5952101ac9f6bfe2791ced0b5cb673ad20",
                 "shasum": ""
             },
-            "time": "2023-04-21T07:42:38+00:00",
+            "time": "2023-04-21T07:51:58+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
