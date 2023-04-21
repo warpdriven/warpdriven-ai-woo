@@ -56,7 +56,7 @@ class WGCAjax
     public function get_product()
     {
         $id = $_GET["id"];
-        $result = wc_get_product($id);
+        $result = wc_get_product(intval($id));
         wp_send_json($result);
     }
 
