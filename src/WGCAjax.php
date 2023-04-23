@@ -349,6 +349,9 @@ class WGCAjax
                 $data->cookie_consent_level = 'explicit'; // 获取Cookie同意级别
                 $data->tags = array(); // 这个属性不是从 WooCommerce 配置中获取的
 
+                // 注册时自动订阅免费计划所需字段
+                $data->plan_id = 11;
+
                 $result = Helper::create_erp_user(json_encode($data));
 
                 if ($result->status) {
