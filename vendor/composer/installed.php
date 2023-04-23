@@ -3,7 +3,7 @@
         'name' => 'warp-driven/wd-woo-plugin-nlp',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
-        'reference' => 'adec790d58e7f1974d130e17ee3c332cee9562e8',
+        'reference' => 'cafa9d1bee542799182a274d14173b2f1e91cabe',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +13,7 @@
         'warp-driven/php-sdk' => array(
             'pretty_version' => 'dev-dev',
             'version' => 'dev-dev',
-            'reference' => '82fbbb5952101ac9f6bfe2791ced0b5cb673ad20',
+            'reference' => 'c31de33fc01d0e7e142a87055d6cf70040e60db1',
             'type' => 'library',
             'install_path' => __DIR__ . '/../warp-driven/php-sdk',
             'aliases' => array(),
@@ -22,7 +22,7 @@
         'warp-driven/wd-woo-plugin-nlp' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => 'adec790d58e7f1974d130e17ee3c332cee9562e8',
+            'reference' => 'cafa9d1bee542799182a274d14173b2f1e91cabe',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
