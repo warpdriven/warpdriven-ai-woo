@@ -72,7 +72,7 @@ class Helper
      */
     public static function init_products($api_key, $args)
     {
-        $search_url = 'https://data-stg.warp-driven.com/latest/product/init';
+        $search_url = 'https://data-stg.warp-driven.com/latest/product/upsert/';
         // $search_url = 'https://data.warp-driven.com/latest/product/init';
         $response = wp_remote_post($search_url,array("headers"=>array("X-API-Key"=>$api_key,"Content-Type"=>"application/json"),"body"=>$args,"timeout"=>1200));
         return self::response($response);
@@ -85,8 +85,9 @@ class Helper
      */
     public static function get_vs_credit_status($api_key)
     {
-        $search_url = 'https://data-stg.warp-driven.com/latest/product/get_vs_credit_status?plan_id=1';
+        // $search_url = 'https://data-stg.warp-driven.com/latest/product/get_vs_credit_status?plan_id=1';
         // $search_url = 'https://data.warp-driven.com/latest/product/get_vs_credit_status?plan_id=1';
+        $search_url = 'https://ai-stg.warp-driven.com/latest/vs/get_vs_credit_status?plan_id=1';
         $response = wp_remote_get($search_url,array("headers"=>array("X-API-Key"=>$api_key),"timeout"=>1200));
         return self::response($response);
     }
@@ -213,6 +214,7 @@ class Helper
     public static function response($response,$args='{}'){
         error_log(print_r($response, true));
         if (!is_wp_error($response)) {
+            // return $response['response'];
             $result = json_decode($response['body']);
             $result->code = $response['response']?$response['response']['code']:200;
             if($result->detail){
