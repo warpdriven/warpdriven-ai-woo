@@ -81,6 +81,7 @@ class Helper
 
 
         /**
+        /**
      * Initialize product image
      * 
      * $api_key          authorization key
@@ -147,6 +148,7 @@ class Helper
     {
         $search_url = self::$WARP_NLP_HOST.'latest/writer/all_task_info';
         $response = wp_remote_get($search_url,array("headers"=>array("X-API-Key"=>$api_key,"Content-Type"=>"application/json"),"timeout"=>1200));
+        return self::response_by_get($response);
         return self::response_by_get($response);
     }
 
