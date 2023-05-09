@@ -5,22 +5,22 @@ namespace WarpDriven\PhpSdk;
 class Helper
 {
 
-    // public static $WARP_AI_HOST = "https://ai-stg.warp-driven.com/";
+    public static $WARP_AI_HOST = "https://ai-stg.warp-driven.com/";
 
-    // public static $WARP_NLP_HOST = "https://nlp-stg.warp-driven.com/";
+    public static $WARP_NLP_HOST = "https://nlp-stg.warp-driven.com/";
 
-    // public static $WARP_DATA_HOST = "https://data-stg.warp-driven.com/";
+    public static $WARP_DATA_HOST = "https://data-stg.warp-driven.com/";
 
-    // public static $WARP_API_HOST = "https://api-stg.warp-driven.com/";
+    public static $WARP_API_HOST = "https://api-stg.warp-driven.com/";
 
 
-    public static $WARP_AI_HOST = "https://ai.warp-driven.com/";
+    // public static $WARP_AI_HOST = "https://ai.warp-driven.com/";
 
-    public static $WARP_NLP_HOST = "https://nlp.warp-driven.com/";
+    // public static $WARP_NLP_HOST = "https://nlp.warp-driven.com/";
 
-    public static $WARP_DATA_HOST = "https://data.warp-driven.com/";
+    // public static $WARP_DATA_HOST = "https://data.warp-driven.com/";
 
-    public static $WARP_API_HOST = "https://api.warp-driven.com/";
+    // public static $WARP_API_HOST = "https://api.warp-driven.com/";
 
     /**
      * Query similar products according to product ID
@@ -80,8 +80,7 @@ class Helper
     }
 
 
-        /**
-        /**
+    /**
      * Initialize product image
      * 
      * $api_key          authorization key
@@ -264,7 +263,14 @@ class Helper
      */
     public static function response_by_get($response,$args='{}'){
         if (!is_wp_error($response)) {
-            return $response['response'];
+            $result = json_decode($response['body']);
+            if(!$result) return $response;
+            $result->code = $response['response']?$response['response']['code']:200;
+            if($result->detail){
+                $result->status = false;
+                $result->msg = $result->detail;
+            }
+            return $result;
         }else{
             return $response;
         }

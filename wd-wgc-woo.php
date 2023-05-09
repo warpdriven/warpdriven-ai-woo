@@ -3,11 +3,11 @@
 Plugin Name: WarpDriven GPT Copywriting
 Plugin URI: https://wordpress.org/plugins/wd-vs-woo
 Description: WarpDriven GPT Copywriting
-Author: Warp Driven
+Author: Warp Driven Technology
 Author URI: https://warp-driven.com/
 Text Domain: wd-wgc-woo
 Domain Path: /languages/
-Version: 0.0.1
+Version: 1.2.0
 */
 require_once "vendor/autoload.php";
 
