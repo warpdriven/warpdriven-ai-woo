@@ -1,5 +1,6 @@
 git pull
 
+composer upgrade
 cp devops/prod/WDEnv.php vendor/warp-driven/php-sdk/src/
 
 npm install
