@@ -46,3 +46,4 @@ Thumbs.db
 assets/test/
 vendor/*
 *.lock
+target/
