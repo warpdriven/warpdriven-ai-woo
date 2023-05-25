@@ -46,11 +46,11 @@ class  WGCSettingPage
     public function add_page()
     {
         $hookname = add_submenu_page(
-            'warp-driven-wgc',
-            __('WarpDriven GPT Copywriting Setting', 'warp-driven-wgc'),
-            __('Setting', 'warp-driven-wgc'),
+            'warpdriven-gpt-copywriting',
+            __('WarpDriven GPT Copywriting Setting', 'warpdriven-gpt-copywriting'),
+            __('Setting', 'warpdriven-gpt-copywriting'),
             'manage_options',
-            'warp-driven-wgc-setting',
+            'warpdriven-gpt-copywriting-setting',
             array($this, 'page_html'),
             80
         );
@@ -64,9 +64,9 @@ class  WGCSettingPage
             return;
         }
         if (isset($_GET['settings-updated'])) {
-            add_settings_error('warp-driven-wgc-setting', 'warp-driven-wgc-setting', __('Settings Saved', 'wd-wgc-woo'), 'updated');
+            add_settings_error('warpdriven-gpt-copywriting-setting', 'warpdriven-gpt-copywriting-setting', __('Settings Saved', 'wd-wgc-woo'), 'updated');
         }
-        settings_errors('warp-driven-wgc-setting');
+        settings_errors('warpdriven-gpt-copywriting-setting');
         ?>
         <div id="gpt-app" class="wrap">
             <?php
@@ -81,7 +81,7 @@ class  WGCSettingPage
                 <template #footer>
                     <?php
                         // settings_fields('wgc');
-                        // do_settings_sections('warp-driven-wgc-setting');
+                        // do_settings_sections('warpdriven-gpt-copywriting-setting');
                         // submit_button(__('Save Settings', 'wd-wgc-woo'));
                     ?>
                 </template>
