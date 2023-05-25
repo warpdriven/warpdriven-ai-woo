@@ -17,4 +17,4 @@ cd ../wd-woo-plugin-nlp-php
 mkdir -p ./target/stg
 rm ./target/stg/*.zip
 
-zip -r  ./target/stg/warpdriven-gpt-copywriting.zip . -x "devops/**" "node_modules/**" "target/**" ".*"
+zip -r  ./target/stg/plugin-warpdriven-gpt-copywriting.zip . -x "devops/**" "node_modules/**" "target/**" ".*"
