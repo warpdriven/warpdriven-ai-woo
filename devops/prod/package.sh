@@ -14,4 +14,4 @@ cd ../wd-woo-plugin-nlp-php
 
 mkdir -p ./target/prod
 rm ./target/prod/*.zip
-zip -r  ./target/prod/wd-woo-plugin-nlp-php.zip . -x "devops/**" "node_modules/**" "target/**" ".*"
+zip -r  ./target/prod/WarpDriven-GPT-Copywriting.zip . -x "devops/**" "node_modules/**" "target/**" ".*"

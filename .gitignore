@@ -47,3 +47,4 @@ assets/test/
 vendor/*
 *.lock
 target/
+assets/
