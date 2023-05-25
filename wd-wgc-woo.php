@@ -1,11 +1,11 @@
 <?php
 /*
 Plugin Name: WarpDriven GPT Copywriting
-Plugin URI: https://wordpress.org/plugins/warpdriven-gpt-copywriting
+Plugin URI: https://warp-driven.com/service/warpdriven-gpt-copywriting/
 Description: WarpDriven GPT Copywriting
 Author: Warp Driven Technology
 Author URI: https://warp-driven.com/
-Text Domain: wd-wgc-woo
+Text Domain: warpdriven-gpt-copywriting
 Domain Path: /languages/
 Version: 1.2.0
 */
