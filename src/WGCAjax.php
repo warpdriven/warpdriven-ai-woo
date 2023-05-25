@@ -87,11 +87,11 @@ class WGCAjax
     public function query_product_page()
     {
 
-        $limit = $_POST["limit"];
-        $page = $_POST["page"];
-        $name = $_POST["name"];
-        $sku = $_POST["sku"];
-        $product_slug = $_POST["product_slug"];
+        $limit = (int)$_POST["limit"];
+        $page = (int)$_POST["page"];
+        $name = sanitize_text_field($_POST["name"]);
+        $sku = sanitize_text_field($_POST["sku"]);
+        $product_slug = sanitize_text_field($_POST["product_slug"]);
 
         $tax_query = array();
 

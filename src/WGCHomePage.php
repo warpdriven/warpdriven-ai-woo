@@ -29,7 +29,7 @@ class WGCHomePage
     {
         ?>
         <div id="gpt-app">
-            <gpt-page :erp-user-email="'<?php echo get_option('admin_email'); ?>'"></gpt-page>
+            <gpt-page :erp-user-email="'<?php echo esc_html(get_option('admin_email')); ?>'"></gpt-page>
         </div>
         <?php
     }

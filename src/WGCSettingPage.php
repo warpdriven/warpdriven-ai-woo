@@ -86,7 +86,7 @@ class  WGCSettingPage
                     ?>
                 </template>
             </gpt-setting-page> -->
-            <gpt-setting-page :erp-user-email="'<?php echo get_option('admin_email'); ?>'" />
+            <gpt-setting-page :erp-user-email="'<?php echo esc_html(get_option('admin_email')); ?>'" />
         </div>
         <?php
     }
