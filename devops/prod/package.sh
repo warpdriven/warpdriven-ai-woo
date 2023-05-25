@@ -5,11 +5,11 @@ cp devops/prod/WDEnv.php vendor/warp-driven/php-sdk/src/
 
 cd ../wd-woo-plugin-gpt-vue/
 
-rm -rf ./assets
 git pull
 npm install
 npm run build
 
+rm -rf ../wd-woo-plugin-nlp-php/assets/*
 cp -R dist ../wd-woo-plugin-nlp-php/assets/
 
 cd ../wd-woo-plugin-nlp-php
