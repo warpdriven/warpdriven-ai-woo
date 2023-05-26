@@ -51,5 +51,13 @@ Any technical questions, please don’t hesitate to contact us: info@warp-driven
 ## TERMS AND PRIVACY POLICY
 You can find more details on WarpDriven’s terms and privacy policy in the following links: [Privacy Policy](https://warp-driven.com/privacy-policy/)
 
+## 3rd Party Service
+WarpDriven GPT Copywriting plugin is relying on the OpenAI GPT API which could be using GPT-4, GPT-3.5-turbo or other models. 
+
+The service page is here: https://openai.com/product/gpt-4
+
+Please refer to OpenAI [privacy policy](https://openai.com/policies/privacy-policy).
+
+
 ## Development Changelog
 https://warp-driven.com/service/warpdriven-gpt-copywriting
