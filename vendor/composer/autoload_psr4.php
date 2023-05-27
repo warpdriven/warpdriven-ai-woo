@@ -7,5 +7,4 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'WarpDriven\\WgcCore\\' => array($baseDir . '/src'),
-    'WarpDriven\\PhpSdk\\' => array($vendorDir . '/warp-driven/php-sdk/src'),
 );

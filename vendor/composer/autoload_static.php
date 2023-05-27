@@ -4,13 +4,12 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit066f6e5adbb91b7669fd74aeb652a0f1
+class ComposerStaticInit2cb804f24daff9624e1392e0a9437507
 {
     public static $prefixLengthsPsr4 = array (
         'W' => 
         array (
             'WarpDriven\\WgcCore\\' => 19,
-            'WarpDriven\\PhpSdk\\' => 18,
         ),
     );
 
@@ -18,10 +17,6 @@ class ComposerStaticInit066f6e5adbb91b7669fd74aeb652a0f1
         'WarpDriven\\WgcCore\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src',
-        ),
-        'WarpDriven\\PhpSdk\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/warp-driven/php-sdk/src',
         ),
     );
 
@@ -32,9 +27,9 @@ class ComposerStaticInit066f6e5adbb91b7669fd74aeb652a0f1
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit066f6e5adbb91b7669fd74aeb652a0f1::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit066f6e5adbb91b7669fd74aeb652a0f1::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit066f6e5adbb91b7669fd74aeb652a0f1::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit2cb804f24daff9624e1392e0a9437507::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit2cb804f24daff9624e1392e0a9437507::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit2cb804f24daff9624e1392e0a9437507::$classMap;
 
         }, null, ClassLoader::class);
     }

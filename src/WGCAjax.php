@@ -6,7 +6,7 @@
 
 namespace WarpDriven\WgcCore;
 
-use WarpDriven\PhpSdk\Helper;
+// use Helper;
 
 use WC_Product;
 

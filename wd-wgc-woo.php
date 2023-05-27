@@ -13,6 +13,9 @@ require_once "vendor/autoload.php";
 
 use WarpDriven\WgcCore\WGCCore;
 
+// include( plugin_dir_path( __FILE__ ) . 'src/WGCCore.php');
+
+
 if (!defined('WD_WGC_WOO_CORE_CORE_FILE')) {
     define('WD_WGC_WOO_CORE_CORE_FILE', __FILE__);
 }

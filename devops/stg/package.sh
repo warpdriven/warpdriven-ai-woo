@@ -1,7 +1,7 @@
 git pull
 
 composer upgrade
-cp devops/stg/WDEnv.php vendor/warp-driven/php-sdk/src/
+cp devops/stg/WDEnv.php src/
 
 cd ../wd-woo-plugin-gpt-vue/
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace WarpDriven\PhpSdk;
+namespace WarpDriven\WgcCore;
 
 class Helper
 {
