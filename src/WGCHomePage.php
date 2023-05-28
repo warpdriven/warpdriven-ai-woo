@@ -1,6 +1,6 @@
 <?php
 
-namespace WarpDriven\WgcCore;
+namespace WarpDrivenWGCCore;
 
 class WGCHomePage
 {

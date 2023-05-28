@@ -4,9 +4,11 @@
  * WooCommerce ajax
  */
 
-namespace WarpDriven\WgcCore;
+namespace WarpDrivenWGCCore;
 
-use WarpDriven\PhpSdk\Helper;
+include_once "Helper.php";
+
+use WarpDrivenWGCCore\Helper;
 
 use WC_Product;
 

@@ -9,9 +9,9 @@ Text Domain: warpdriven-gpt-copywriting
 Domain Path: /languages/
 Version: 1.2.0
 */
-require_once "vendor/autoload.php";
+include_once __DIR__ . '/src/WGCCore.php';
 
-use WarpDriven\WgcCore\WGCCore;
+use WarpDrivenWGCCore\WGCCore;
 
 if (!defined('WD_WGC_WOO_CORE_CORE_FILE')) {
     define('WD_WGC_WOO_CORE_CORE_FILE', __FILE__);

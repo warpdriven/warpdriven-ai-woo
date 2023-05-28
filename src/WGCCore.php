@@ -1,6 +1,12 @@
 <?php
 
-namespace WarpDriven\WgcCore;
+namespace WarpDrivenWGCCore;
+include_once "WGCHomePage.php";
+include_once "WGCSettingPage.php";
+include_once "WGCAjax.php";
+use WarpDrivenWGCCore\WGCHomePage;
+use WarpDrivenWGCCore\WGCSettingPage;
+use WarpDrivenWGCCore\WGCAjax;
 class WGCCore
 {
     public function __construct()
