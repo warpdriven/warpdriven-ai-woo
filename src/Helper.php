@@ -1,7 +1,7 @@
 <?php
 
-namespace WarpDriven\WgcCore;
-
+namespace WarpDrivenWGCCore;
+include_once "WDEnv.php";
 class Helper
 {
     private static $WARP_API_HOST;
