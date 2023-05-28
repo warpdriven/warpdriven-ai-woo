@@ -168,6 +168,9 @@ class WGCAjax
             'pad_counts' => true
         );
         $product_categories = array_values(get_terms($args));
+        foreach($product_categories as $key=>$value){
+            $product_categories[$key]->name=str_replace("&amp;","&",$value->name);
+        }
         wp_send_json($product_categories);
     }
 
