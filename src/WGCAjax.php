@@ -267,13 +267,13 @@ class WGCAjax
      */
     public function get_task_status()
     {
-        $data = (int)$_GET["task_id"];
+        $data = sanitize_text_field($_GET["task_id"]);
         $result = Helper::get_task_status(WGCCore::getApiKey(), $data);
         wp_send_json($result, $result->code);
     }
     public function get_task()
     {
-        $data = (int)$_GET["task_id"];
+        $data = sanitize_text_field($_GET["task_id"]);
         $result = Helper::get_task(WGCCore::getApiKey(), $data);
         wp_send_json($result, $result->code);
     }
