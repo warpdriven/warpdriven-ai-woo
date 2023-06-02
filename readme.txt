@@ -1,16 +1,16 @@
-=== Warp Driven Visual Search ===
+=== WarpDriven GPT Copywrting ===
 Contributors: Warp Driven
 Donate link: https://warp-driven.com/
 Requires at least: 5.9
 Requires PHP: 5.6
-Tested up to: 6.1
-Stable tag: 0.0.1
+Tested up to: 1.2.0
+Stable tag: 1.2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-Warp Driven Visual Search would help improve your website conversion rate, get more recurring visitors, make longer user sessions and know what your visitors are looking for.
+WarpDriven GPT Copywrting would help improve your website conversion rate, get more recurring visitors, make longer user sessions and know what your visitors are looking for.
 
 This plugin would show the visually similar search results on product detail page with a widget on the page bottom and on product list page after you click the search icon on the product image.
 
@@ -27,7 +27,7 @@ By several clicks, you can add the Visual Search function to your website quickl
 
 Automatic installation is the easiest option as WordPress handles the file transfers itself and you don’t even need to leave your web browser. To do an automatic install of WarpDriven Visual Search, login to your WordPress admin panel, navigate to the Plugins menu and click Add New.
 
-In the search field type “Warp Driven” and click “Warp Driven Visual Search” Plugins. You can install it by simply clicking Install Now. After clicking that link you will be asked if you’re sure you want to install the plugin. Click yes and WordPress will automatically complete the installation. After installation has finished, click the ‘activate plugin’ link.
+In the search field type “Warp Driven” and click “WarpDriven GPT Copywrting” Plugins. You can install it by simply clicking Install Now. After clicking that link you will be asked if you’re sure you want to install the plugin. Click yes and WordPress will automatically complete the installation. After installation has finished, click the ‘activate plugin’ link.
 
 #### MANUAL INSTALLATION VIA THE WORDPRESS INTERFACE
 
@@ -91,7 +91,7 @@ Got to official website: [https://warp-driven.com](https://warp-driven.com), reg
 
 Add your website in the table, the copy the **WD AI API Key**.
 
-### 5. Go to the Wordpress Warp Driven Visual Search Plugin Setting
+### 5. Go to the Wordpress WarpDriven GPT Copywrting Plugin Setting
 
 Click the button “**I COPIED MY API KEY**“ and paste your copied API Key into the text box then confirm it.
 
