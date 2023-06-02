@@ -10,11 +10,11 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-WarpDriven GPT Copywrting would help improve your website conversion rate, get more recurring visitors, make longer user sessions and know what your visitors are looking for.
+WarpDriven GPT Copywriting is an application that utilises the capabilities of OpenAI gpt-4 model to help users generate written content such as articles, emails, and more. It is a state-of-the-art AI-powered writing assistant that can help users to write faster and more efficiently. 
 
-This plugin would show the visually similar search results on product detail page with a widget on the page bottom and on product list page after you click the search icon on the product image.
+For eCommerce website, it can be used to generate articles for SEO regularly and automatically. In v1.2, we added Parallel Writing function which let you submit tasks without experiencing blocking or interruptions.
 
-By several clicks, you can add the Visual Search function to your website quickly:
+By several clicks, you can add the plugin to your website quickly:
 
 ### 1. Install the plugin
 
@@ -25,98 +25,59 @@ By several clicks, you can add the Visual Search function to your website quickl
 
 #### AUTOMATIC INSTALLATION
 
-Automatic installation is the easiest option as WordPress handles the file transfers itself and you don’t even need to leave your web browser. To do an automatic install of WarpDriven Visual Search, login to your WordPress admin panel, navigate to the Plugins menu and click Add New.
+Automatic installation is the easiest option as WordPress handles the file transfers itself and you don’t even need to leave your web browser. To do an automatic install of WarpDriven GPT Copywriting, login to your WordPress admin panel, navigate to the Plugins menu and click Add New.
 
-In the search field type “Warp Driven” and click “WarpDriven GPT Copywrting” Plugins. You can install it by simply clicking Install Now. After clicking that link you will be asked if you’re sure you want to install the plugin. Click yes and WordPress will automatically complete the installation. After installation has finished, click the ‘activate plugin’ link.
+In the search field type “WarpDriven” and click “WarpDriven GPT Copywrting” Plugins. You can install it by simply clicking Install Now. After clicking that link you will be asked if you’re sure you want to install the plugin. Click yes and WordPress will automatically complete the installation. After installation has finished, click the ‘activate plugin’ link.
 
 #### MANUAL INSTALLATION VIA THE WORDPRESS INTERFACE
 
-1. Download the plugin zip file to your computer
-1. Go to the WordPress admin panel menu Plugins > Add New
-1. Choose upload
-1. Upload the plugin zip file, the plugin will now be installed
-1. After installation has finished, click the ‘activate plugin’ link
+1. Download the plugin zip file to your computer from https://warp-driven.com/service/warpdriven-gpt-copywriting
+2. Go to the WordPress admin panel menu Plugins > Add New
+3. Choose upload
+4. Upload the plugin zip file, the plugin will now be installed
+5. After installation has finished, click the ‘activate plugin’ link
 
 #### MANUAL INSTALLATION VIA FTP
 
 1. Download the plugin file to your computer and unzip it
-1. Using an FTP program, or your hosting control panel, upload the unzipped plugin folder to your WordPress installation’s wp-content/plugins/ directory.
-1. Activate the plugin from the Plugins menu within the WordPress admin.
+2. Using an FTP program, or your hosting control panel, upload the unzipped plugin folder to your WordPress installation’s wp-content/plugins/ directory.
+3. Activate the plugin from the Plugins menu within the WordPress admin.
 
 ### 2. Register a WarpDriven account
 
-Got to official website: [https://warp-driven.com](https://warp-driven.com), register a new account
+When you open the GPT Copywriting plugin, a register window would pop up. You need to input your password for the registration of WarpDriven AI platform with your store admin email. In addtion, you can also go to WarpDriven AI platform directly: https://erp.warp-driven.com, register a new account which can be used to cross all kinds of eCommerce platform and shops with the same email account.
 
 ### 3. Choose a plan and subscribe it
 
-[https://erp.warp-driven.com/@/subscription](https://erp.warp-driven.com/@/subscription)
+Normally, after you install the plugin, we would automatically register a free plan for you. So you can quickly start to use it. On the setting page of the plugin, you can see several buttons which can contribute you to jump into WarpDriven AI platform where you can see the subscribed plan and credit. https://erp.warp-driven.com/@/subscription/ai_writer
 
 #### FEATURES for different plans
 
-##### Free plan (1-month without any fee)
+https://warp-driven.com/nlp-product-pricing/
 
-- Advanced visually similar search algorithm through WarpDriven AI API
-- Optimised image search results with comprehensive AI prediction
-- **Visually Similar Search Widget** on product detail page
-- **Discovery View** on product list page
-- Init only preferred product categories for Visual Search. So even big websites can use the free version to have a try.
-- Customisable search button at product list page
+That's it, enjoy the AI powered copywriting!
 
-##### Starter plan (Starting at $980/year)
-
-- Include all the FEATURES from Free plan
-- Ticket-based Support
-
-##### Grow up plan (Starting at $3,000/year)
-
-- Include all the FEATURES from Starter plan
-- More credit as demand
-- Premium ticket-based Support
-
-##### Enterprise plan (Customised version, Starting at $12,000/year)
-
-- Include all the FEATURES from Grow up plan
-- Special industrial Algorithm
-- Customised big data handling and data analytics pipeline
-- Integration with eCommerce ERP
-- Integration with Google analytics, Xero, Facebook etc.
-- Monthly reports or real-time dashboard
-- Premium ticket-based and Online Support
-
-> You can find the pricing for both sets of plans here: [Pricing Tables](https://warp-driven.com/elements/pricing-tables/)
-
-### 4. Add your website and get the API Key
-
-[https://erp.warp-driven.com/@/my/website_info](https://erp.warp-driven.com/@/my/website_info)
-
-Add your website in the table, the copy the **WD AI API Key**.
-
-### 5. Go to the Wordpress WarpDriven GPT Copywrting Plugin Setting
-
-Click the button “**I COPIED MY API KEY**“ and paste your copied API Key into the text box then confirm it.
-
-### 6. Choose products and init them
-
-Choose all product categories you preferred, then click the start button to vectorise the products with Warp Driven AI API.
-
-After the process finished, you can go to the product detail page or product list page to see the Visual Search results!
-
-That’s it!
-
-Any technical questions, please don’t hesitate to contact us:
-
-- support@warpdriven.com.au
+Any technical questions, please don’t hesitate to contact us: info@warp-driven.com
 
 ## TERMS AND PRIVACY POLICY
 
 You can find more details on WarpDriven’s terms and privacy policy in the following links: [Privacy Polic](https://warp-driven.com/privacy-policy/)
 
-## Development
+## 3rd Party Service
+Warp Driven AI services
+WarpDriven GPT Copywriting plugin is relying on the WarpDriven AI services which would collect the store basic information, product information and save product description and articles written by the plugin to the Warp Driven service database. Please refer to our [privacy policy](https://openai.com/policies/privacy-policy)
 
-### Changelog
+Used API endpoints:
 
-#### 1.0.0
+- WarpDriven Plan & Credit management service: https://api.warp-driven.com
+- WarpDriven AI NLP service: https://nlp.warp-driven.com/latest
 
-- Integrated WooCommerce Plugin with WarpDriven AI API
-- Implemented WooCommerce feed pagination
-- Integrated Visually Similar Search widget and Discovery View on product list page into one WooCommerce Plugin
+OpenAI services
+WarpDriven GPT Copywriting plugin is relying on the OpenAI GPT API which could be using GPT-4, GPT-3.5-turbo or other models.
+
+The service page is here: https://openai.com/product/gpt-4
+
+Please refer to OpenAI [privacy policy](https://openai.com/policies/privacy-policy).
+
+## Development Changelog
+https://warp-driven.com/service/warpdriven-gpt-copywriting

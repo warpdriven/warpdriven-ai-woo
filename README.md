@@ -13,7 +13,7 @@ MINIMUM REQUIREMENTS
 - WordPress 3.5 or later
 
 ### AUTOMATIC INSTALLATION
-Automatic installation is the easiest option as WordPress handles the file transfers itself and you don’t even need to leave your web browser. To do an automatic install of WarpDriven Visual Search, login to your WordPress admin panel, navigate to the Plugins menu and click Add New.
+Automatic installation is the easiest option as WordPress handles the file transfers itself and you don’t even need to leave your web browser. To do an automatic install of WarpDriven GPT Copywriting, login to your WordPress admin panel, navigate to the Plugins menu and click Add New.
 
 In the search field type “WarpDriven” and click “WarpDriven GPT Copywrting” Plugins. You can install it by simply clicking Install Now. After clicking that link you will be asked if you’re sure you want to install the plugin. Click yes and WordPress will automatically complete the installation. After installation has finished, click the ‘activate plugin’ link.
 
