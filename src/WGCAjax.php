@@ -58,7 +58,7 @@ class WGCAjax
      */
     public function get_product()
     {
-        $id = $_GET["id"];
+        $id = (int)$_GET["id"];
         $product = wc_get_product(intval($id));
         $tags = $product->get_tag_ids();
         $terms = array();
@@ -267,13 +267,13 @@ class WGCAjax
      */
     public function get_task_status()
     {
-        $data = $_GET["task_id"];
+        $data = (int)$_GET["task_id"];
         $result = Helper::get_task_status(WGCCore::getApiKey(), $data);
         wp_send_json($result, $result->code);
     }
     public function get_task()
     {
-        $data = $_GET["task_id"];
+        $data = (int)$_GET["task_id"];
         $result = Helper::get_task(WGCCore::getApiKey(), $data);
         wp_send_json($result, $result->code);
     }
