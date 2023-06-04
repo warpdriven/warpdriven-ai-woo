@@ -1,9 +1,9 @@
-=== WarpDriven GPT Copywrting ===
+=== WarpDriven GPT Copywriting ===
 Contributors: Warp Driven
 Donate link: https://warp-driven.com/
 Requires at least: 5.9
 Requires PHP: 5.6
-Tested up to: 1.2.0
+Tested up to: 6.0
 Stable tag: 1.2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -27,7 +27,7 @@ By several clicks, you can add the plugin to your website quickly:
 
 Automatic installation is the easiest option as WordPress handles the file transfers itself and you don’t even need to leave your web browser. To do an automatic install of WarpDriven GPT Copywriting, login to your WordPress admin panel, navigate to the Plugins menu and click Add New.
 
-In the search field type “WarpDriven” and click “WarpDriven GPT Copywrting” Plugins. You can install it by simply clicking Install Now. After clicking that link you will be asked if you’re sure you want to install the plugin. Click yes and WordPress will automatically complete the installation. After installation has finished, click the ‘activate plugin’ link.
+In the search field type “WarpDriven” and click “WarpDriven GPT Copywriting” Plugins. You can install it by simply clicking Install Now. After clicking that link you will be asked if you’re sure you want to install the plugin. Click yes and WordPress will automatically complete the installation. After installation has finished, click the ‘activate plugin’ link.
 
 #### MANUAL INSTALLATION VIA THE WORDPRESS INTERFACE
 
