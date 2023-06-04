@@ -8,6 +8,7 @@ Stable tag: 1.2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
+
 == Description ==
 
 WarpDriven GPT Copywriting is an application that utilises the capabilities of OpenAI gpt-4 model to help users generate written content such as articles, emails, and more. It is a state-of-the-art AI-powered writing assistant that can help users to write faster and more efficiently. 
