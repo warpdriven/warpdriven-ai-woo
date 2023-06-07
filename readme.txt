@@ -3,7 +3,7 @@ Contributors: Warp Driven
 Donate link: https://warp-driven.com/
 Requires at least: 5.9
 Requires PHP: 5.6
-Tested up to: 6.0
+Tested up to: 6.2.2
 Stable tag: 1.2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -78,6 +78,8 @@ OpenAI services
 WarpDriven GPT Copywriting plugin is relying on the OpenAI GPT API which could be using GPT-4, GPT-3.5-turbo or other models.
 
 The service page is here: https://openai.com/product/gpt-4
+
+
 
 Please refer to OpenAI [privacy policy](https://openai.com/policies/privacy-policy).
 
