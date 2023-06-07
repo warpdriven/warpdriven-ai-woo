@@ -7,7 +7,7 @@ Author: Warp Driven Technology
 Author URI: https://warp-driven.com/
 Text Domain: warpdriven-gpt-copywriting
 Domain Path: /languages/
-Version: 1.2.0
+Version: 1.2.1
 */
 include_once __DIR__ . '/src/WGCCore.php';
 
