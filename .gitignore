@@ -44,3 +44,7 @@ Thumbs.db
 *.mov
 *.wmv
 assets/test/
+vendor/*
+*.lock
+target/
+assets/

@@ -1,17 +1,17 @@
 <?php
 /*
 Plugin Name: WarpDriven GPT Copywriting
-Plugin URI: https://wordpress.org/plugins/wd-vs-woo
+Plugin URI: https://warp-driven.com/service/warpdriven-gpt-copywriting/
 Description: WarpDriven GPT Copywriting
-Author: Warp Driven
+Author: Warp Driven Technology
 Author URI: https://warp-driven.com/
-Text Domain: wd-wgc-woo
+Text Domain: warpdriven-gpt-copywriting
 Domain Path: /languages/
-Version: 0.0.1
+Version: 1.2.0
 */
-require_once "vendor/autoload.php";
+include_once __DIR__ . '/src/WGCCore.php';
 
-use WarpDriven\WgcCore\WGCCore;
+use WarpDrivenWGCCore\WGCCore;
 
 if (!defined('WD_WGC_WOO_CORE_CORE_FILE')) {
     define('WD_WGC_WOO_CORE_CORE_FILE', __FILE__);
