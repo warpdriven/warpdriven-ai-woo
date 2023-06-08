@@ -336,7 +336,8 @@ class WGCAjax
             } else {
 
                 // 创建用户
-                $data->name = get_option('woocommerce_store_name'); // 获取商店名称
+                //$data->name = get_option('woocommerce_store_name'); // 获取商店名称
+                $data->name = substr($data->email,0,strpos($data->email,'@'));
                 $data->phone = get_option('woocommerce_store_phone'); // 获取商店电话
                 $data->language = get_option('WPLANG'); // 获取语言设置
 
