@@ -1,8 +1,8 @@
-git pull
+echo "Current directory: $(pwd)"
+echo "Contents of ../../src directory: $(ls -R ../../src)"
 
-cd ../wd-woo-plugin-nlp-php
 
-mkdir -p ./target/stg
-rm ./target/stg/*.zip
+mkdir -p ./target/
 
-zip -r  ./target/stg/plugin-warpdriven-ai.zip . -x "devops/**" "node_modules/**" "target/**" ".*"
+# zip -r  ./target/plugin-warpdriven-ai.zip $(pwd)/../../src/*.php -x "devops/**" "node_modules/**" "target/**" ".*"
+zip -r  ./target/plugin-warpdriven-ai.zip $(pwd)/../../src/*.php
