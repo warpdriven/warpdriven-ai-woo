@@ -1,8 +1,8 @@
 <?php
 /*
-Plugin Name: WarpDriven GPT Copywriting
+Plugin Name: WarpDriven AI
 Plugin URI: https://warp-driven.com/service/warpdriven-gpt-copywriting/
-Description: WarpDriven GPT Copywriting
+Description: WarpDriven AI
 Author: Warp Driven Technology
 Author URI: https://warp-driven.com/
 Text Domain: warpdriven-gpt-copywriting
