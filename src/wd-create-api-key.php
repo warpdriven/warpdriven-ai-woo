@@ -2,7 +2,7 @@
 /*
 Plugin Name: WarpDriven AI
 Plugin URI: https://warp-driven.com/plugins/warpdriven-ai
-Description: WarpDriven AI - Enterprise Woocommerce Plugin
+Description: WarpDriven Visually Similar Recommendations
 Author: Warp Driven Technology
 Author URI: https://warp-driven.com/
 Text Domain: warpdriven-ai
@@ -23,6 +23,8 @@ class WDCreateApiMain{
         if (in_array("woocommerce/woocommerce.php", apply_filters("active_plugins", get_option("active_plugins")))) {
             add_action('wp_ajax_create_rest_api_key', array($this, "create_api"));
         }
+        register_setting("warp-driven-settings-group", "wd_consumer_key");
+        register_setting("warp-driven-settings-group", "wd_consumer_secret");
     }
 
     public function create_api(){
@@ -76,6 +78,11 @@ class WDCreateApiMain{
                     $response['consumer_secret'] = $consumer_secret;
                     $response['message']         = __( 'API Key generated successfully. Make sure to copy your new keys now as the secret key will be hidden once you leave this page.', 'woocommerce' );
                     $response['revoke_url']      = '<a style="color: #a00; text-decoration: none;" href="' . esc_url( wp_nonce_url( add_query_arg( array( 'revoke-key' => $key_id ), admin_url( 'admin.php?page=wc-settings&tab=advanced&section=keys' ) ), 'revoke' ) ) . '">' . __( 'Revoke key', 'woocommerce' ) . '</a>';
+                    
+                    delete_option("wd_consumer_key");
+                    add_option("wd_consumer_key",$consumer_key);
+                    delete_option("wd_consumer_secret");
+                    add_option("wd_consumer_secret",$consumer_secret);
                 }
 
             }else{
@@ -85,10 +92,6 @@ class WDCreateApiMain{
         } catch ( Exception $e ) {
             wp_send_json( array( 'message' => $e->getMessage() ) );
         }
-
-        // // wp_send_json_success must be outside the try block not to break phpunit tests.
-		// wp_send_json_success( $response );
-
         wp_send_json($response);
         
     }
